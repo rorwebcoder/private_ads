@@ -7,8 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+		
+		<%= render :partial => "shared/signup_link" %>
+		
+		<div class="flashContainer">
+				<% flash.each do |key, message| %>
+						<%= message %>
+				<% end %>
+		</div>
+		
+		<%= yield %>
 
 </body>
 </html>

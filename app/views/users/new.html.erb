@@ -1,0 +1,20 @@
+<% content_for :page_specific_js do %>
+		<%#= javascript_include_tag "jquery.infieldlabel" %>
+<% end %>
+
+<div class="loginContainer">
+  <div class="loginForm">
+    <%= form_for @user do |f| %>
+      <%= content_tag("div", "#{@user.display_error_messages}", :class => "error_message_container") %>
+      <%= f.label :login, "Login", :size=>"30"%>
+      <%= f.text_field :login, :class => "textInput" %><br /><br />
+				 <%= f.label :email, "Email", :size=>"30"%>
+      <%= f.text_field :email, :class => "textInput" %><br /><br />
+      <%= f.label :password %>
+      <%= f.password_field :password, :class => "textInput" %><br /><br />
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, :class => "textInput" %><br /><br />
+      <%= f.submit "CreateUser" %>
+    <% end %>
+  </div>
+</div>

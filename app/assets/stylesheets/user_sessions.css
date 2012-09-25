@@ -1,0 +1,26 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+#user_nav {
+  float: right;
+}
+
+.loginContainer {
+  padding-left: 20px;
+  padding-top: 50px;
+}
+
+.error_message_container {
+  color: #FF4500;
+  padding-bottom: 10px;
+}
+
+.field_with_errors {
+  float: left;
+}
+
+.flashContainer {
+  color: #008000;
+}

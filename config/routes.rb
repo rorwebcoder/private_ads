@@ -1,4 +1,21 @@
 PrivateAds::Application.routes.draw do
+  
+  match 'login' => 'user_sessions#new'
+  match 'logout' => 'user_sessions#destroy'
+  
+  match 'forgot_password' => 'user_sessions#forgot_password', :as => :forgot_password
+  
+  #~ match 'reset_password/:reset_password_code' => 'user_sessions#reset_password', :as => :reset_password
+  put 'reset_password/:reset_password_code' => 'user_sessions#reset_password_submit', :as => :reset_password, :via => :put
+  get 'reset_password/:reset_password_code' => 'user_sessions#reset_password', :as => :reset_password, :via => :get  
+  
+  match 'success' => 'user_sessions#new'
+  
+  resources :users
+  resource :user_session
+  
+  root :to => 'user_sessions#new'  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
